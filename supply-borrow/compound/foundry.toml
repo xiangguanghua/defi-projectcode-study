@@ -1,0 +1,12 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["gitmodules"]
+
+remappings = [
+    "forge-std/=gitmodules/forge-std/src/",
+    "@openzeppelin/contracts=src/contracts/",
+    "halmos-cheatcodes/=gitmodules/halmos-cheatcodes/src/",
+]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
