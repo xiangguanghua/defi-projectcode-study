@@ -1,0 +1,8 @@
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["gitmodules"]
+
+remappings = ["forge-std/=gitmodules/forge-std/src/"]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
