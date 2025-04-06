@@ -3,7 +3,7 @@ pragma solidity ^0.8.10;
 
 import "../storage/CErc20Storage.sol";
 import "./CTokenInterface.sol";
-import "../comm/EIP20NonStandardInterface.sol";
+import "../interfaces/EIP20NonStandardInterface.sol";
 
 abstract contract CErc20Interface is CErc20Storage {
     function mint(uint256 mintAmount) external virtual returns (uint256);
