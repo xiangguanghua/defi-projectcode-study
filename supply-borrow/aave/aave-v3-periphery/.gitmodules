@@ -1,3 +1,0 @@
-[submodule "supply-borrow/aave/aave-v3-periphery/gitmodules/aave-v3-core"]
-	path = supply-borrow/aave/aave-v3-periphery/gitmodules/aave-v3-core
-	url = https://github.com/aave/aave-v3-core
