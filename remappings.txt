@@ -1,0 +1,4 @@
+forge-std=gitmodules/forge-std/src
+@openzeppelin/contracts/=gitmodules/openzeppelin-contracts/contracts/
+
+@aave/core-v3/contracts/=projects/supply-borrow/aave/aave-v3-core/
