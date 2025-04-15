@@ -97,7 +97,7 @@ contract SavingsDai {
     }
 
     function _rpow(uint256 x, uint256 n) internal pure returns (uint256 z) {
-        assembly {
+        assembly ("memory-safe") {
             switch x
             case 0 {
                 switch n
@@ -350,7 +350,7 @@ contract SavingsDai {
             bytes32 r;
             bytes32 s;
             uint8 v;
-            assembly {
+            assembly ("memory-safe") {
                 r := mload(add(signature, 0x20))
                 s := mload(add(signature, 0x40))
                 v := byte(0, mload(add(signature, 0x60)))

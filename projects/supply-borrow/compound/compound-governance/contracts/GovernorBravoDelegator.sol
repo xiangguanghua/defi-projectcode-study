@@ -57,7 +57,7 @@ contract GovernorBravoDelegator is GovernorBravoDelegatorStorage, GovernorBravoE
      */
     function delegateTo(address callee, bytes memory data) internal {
         (bool success, bytes memory returnData) = callee.delegatecall(data);
-        assembly {
+        assembly ("memory-safe") {
             if eq(success, 0) { revert(add(returnData, 0x20), returndatasize()) }
         }
     }
@@ -71,7 +71,7 @@ contract GovernorBravoDelegator is GovernorBravoDelegatorStorage, GovernorBravoE
         // delegate all other functions to current implementation
         (bool success,) = implementation.delegatecall(msg.data);
 
-        assembly {
+        assembly ("memory-safe") {
             let free_mem_ptr := mload(0x40)
             returndatacopy(free_mem_ptr, 0, returndatasize())
 

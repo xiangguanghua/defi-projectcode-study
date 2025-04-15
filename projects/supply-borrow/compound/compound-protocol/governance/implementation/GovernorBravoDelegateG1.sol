@@ -472,7 +472,7 @@ contract GovernorBravoDelegate is GovernorBravoDelegateStorageV1, GovernorBravoE
 
     function getChainIdInternal() internal view returns (uint256) {
         uint256 chainId;
-        assembly {
+        assembly ("memory-safe") {
             chainId := chainid()
         }
         return chainId;

@@ -256,7 +256,7 @@ contract LQTYToken is CheckContract, ILQTYToken {
     // --- Internal operations ---
 
     function _chainID() private view returns (uint256 chainID) {
-        assembly {
+        assembly ("memory-safe") {
             chainID := chainid()
         }
     }

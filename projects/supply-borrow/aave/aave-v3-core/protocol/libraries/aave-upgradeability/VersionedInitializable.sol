@@ -66,7 +66,7 @@ abstract contract VersionedInitializable {
         // under construction or not.
         uint256 cs;
         //solium-disable-next-line
-        assembly {
+        assembly ("memory-safe") {
             cs := extcodesize(address())
         }
         return cs == 0;

@@ -170,7 +170,7 @@ contract CErc20 is CToken, CErc20Interface {
         token.transferFrom(from, address(this), amount);
 
         bool success;
-        assembly {
+        assembly ("memory-safe") {
             switch returndatasize()
             case 0 {
                 // This is a non-standard ERC-20
@@ -207,7 +207,7 @@ contract CErc20 is CToken, CErc20Interface {
         token.transfer(to, amount);
 
         bool success;
-        assembly {
+        assembly ("memory-safe") {
             switch returndatasize()
             case 0 {
                 // This is a non-standard ERC-20

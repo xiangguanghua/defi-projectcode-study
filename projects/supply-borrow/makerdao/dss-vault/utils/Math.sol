@@ -71,13 +71,13 @@ library Math {
 
     // --- tool ---
     function either(bool x, bool y) internal pure returns (bool z) {
-        assembly {
+        assembly ("memory-safe") {
             z := or(x, y)
         }
     }
 
     function both(bool x, bool y) internal pure returns (bool z) {
-        assembly {
+        assembly ("memory-safe") {
             z := and(x, y)
         }
     }
@@ -94,7 +94,7 @@ library Math {
 
     // x^n, 精度为 b
     function rpow(uint256 x, uint256 n, uint256 b) internal pure returns (uint256 z) {
-        assembly {
+        assembly ("memory-safe") {
             // 当n为偶数时：x^n = (x^2)^(n/2)
             // 当n为奇数时：x^n = x * x^(n-1)
             switch x
@@ -136,7 +136,7 @@ library Math {
     }
 
     function abaci_rpow(uint256 x, uint256 n, uint256 b) internal pure returns (uint256 z) {
-        assembly {
+        assembly ("memory-safe") {
             switch n
             case 0 { z := b }
             default {

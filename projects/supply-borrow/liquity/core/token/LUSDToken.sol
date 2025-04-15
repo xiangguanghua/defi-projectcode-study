@@ -187,7 +187,7 @@ contract LUSDToken is CheckContract, ILUSDToken {
     // --- Internal operations ---
 
     function _chainID() private view returns (uint256 chainID) {
-        assembly {
+        assembly ("memory-safe") {
             chainID := chainid()
         }
     }
